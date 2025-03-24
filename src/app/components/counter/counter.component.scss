@@ -1,0 +1,54 @@
+$primary-bg: #1a1a1a;
+$secondary-bg: #2d2d2d;
+$accent-color: #c8a2c8;
+$text-color: #ffffff;
+$error-color: #ff6b6b;
+
+.counter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 15px;
+    background-color: $secondary-bg;
+    border-radius: 12px;
+    border: 1px solid rgba($accent-color, 0.2);
+  }
+  
+  .counter-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: $accent-color;
+    min-width: 40px;
+    text-align: center;
+  }
+  
+  .counter-actions {
+    display: flex;
+    gap: 8px;
+  
+    .btn-counter {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 6px;
+      background-color: rgba($accent-color, 0.1);
+      color: $accent-color;
+      cursor: pointer;
+      transition: all 0.2s ease;
+  
+      &:hover {
+        background-color: rgba($accent-color, 0.2);
+      }
+  
+      &:active {
+        transform: scale(0.95);
+      }
+  
+      i {
+        font-size: 14px;
+      }
+    }
+  }

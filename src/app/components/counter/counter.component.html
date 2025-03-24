@@ -1,0 +1,16 @@
+<div class="counter-container">
+    <div class="counter-value">
+        {{ counter$ | async }}
+    </div>
+    <div class="counter-actions">
+        <button class="btn-counter" (click)="decrement()">
+            <i class="fas fa-minus"></i>
+        </button>
+        <button class="btn-counter" (click)="reset()">
+            <i class="fas fa-undo"></i>
+        </button>
+        <button class="btn-counter" (click)="increment()">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+</div>

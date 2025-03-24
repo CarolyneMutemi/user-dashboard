@@ -1,0 +1,108 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <!-- Basic Information -->
+    <div class="form-section">
+      <h3><i class="fas fa-user"></i> Basic Information</h3>
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" formControlName="name" [class.error]="isFieldInvalid('name')">
+        <div class="error-message" *ngIf="isFieldInvalid('name')">
+          {{ getFieldError('name') }}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="username">Username *</label>
+        <input type="text" id="username" formControlName="username" [class.error]="isFieldInvalid('username')">
+        <div class="error-message" *ngIf="isFieldInvalid('username')">
+          {{ getFieldError('username') }}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" formControlName="email" [class.error]="isFieldInvalid('email')">
+        <div class="error-message" *ngIf="isFieldInvalid('email')">
+          {{ getFieldError('email') }}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Phone *</label>
+        <input type="tel" id="phone" formControlName="phone" [class.error]="isFieldInvalid('phone')">
+        <div class="error-message" *ngIf="isFieldInvalid('phone')">
+          {{ getFieldError('phone') }}
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="website">Website</label>
+        <input type="text" id="website" formControlName="website">
+      </div>
+    </div>
+  
+    <!-- Address Information -->
+    <div class="form-section" formGroupName="address">
+      <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+      <div class="form-group">
+        <label for="street">Street *</label>
+        <input type="text" id="street" formControlName="street">
+      </div>
+  
+      <div class="form-group">
+        <label for="suite">Suite</label>
+        <input type="text" id="suite" formControlName="suite">
+      </div>
+  
+      <div class="form-group">
+        <label for="city">City *</label>
+        <input type="text" id="city" formControlName="city">
+      </div>
+  
+      <div class="form-group">
+        <label for="zipcode">Zipcode *</label>
+        <input type="text" id="zipcode" formControlName="zipcode">
+      </div>
+  
+      <div formGroupName="geo">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lat">Latitude</label>
+            <input type="text" id="lat" formControlName="lat">
+          </div>
+  
+          <div class="form-group">
+            <label for="lng">Longitude</label>
+            <input type="text" id="lng" formControlName="lng">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Company Information -->
+    <div class="form-section" formGroupName="company">
+      <h3><i class="fas fa-building"></i> Company</h3>
+      <div class="form-group">
+        <label for="company-name">Company Name *</label>
+        <input type="text" id="company-name" formControlName="name">
+      </div>
+  
+      <div class="form-group">
+        <label for="catchPhrase">Catch Phrase</label>
+        <input type="text" id="catchPhrase" formControlName="catchPhrase">
+      </div>
+  
+      <div class="form-group">
+        <label for="bs">Business Strategy</label>
+        <input type="text" id="bs" formControlName="bs">
+      </div>
+    </div>
+  
+    <div class="form-actions">
+      <button type="submit" [disabled]="userForm.invalid" class="btn-submit">
+        <i class="fas fa-save"></i> {{ mode === 'add' ? 'Add User' : 'Save Changes' }}
+      </button>
+      <button type="button" class="btn-cancel" (click)="onCancel()">
+        <i class="fas fa-times"></i> Cancel
+      </button>
+    </div>
+  </form>
